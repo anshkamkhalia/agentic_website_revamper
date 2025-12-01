@@ -1,0 +1,556 @@
+
+/* Global CSS - Modern Redesign */
+
+/* Font Definitions (Retained from original, will be overridden by modern fonts) */
+/* Using system-ui as a modern fallback and importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    /* Original Color Variables (Retained) */
+    --color_0: 255,255,255;
+    --color_1: 255,255,255;
+    --color_2: 0,0,0;
+    --color_3: 255,0,0;
+    --color_4: 28,50,127;
+    --color_5: 12,129,17;
+    --color_6: 114,114,114;
+    --color_7: 176,176,176;
+    --color_8: 255,255,255;
+    --color_9: 207,207,207;
+    --color_10: 90,89,89;
+    --color_11: 255,255,255;
+    --color_12: 176,176,176;
+    --color_13: 114,114,114;
+    --color_14: 207,207,207;
+    --color_15: 90,89,89;
+    --color_16: 28,50,127;
+    --color_17: 28,50,127;
+    --color_18: 28,50,127;
+    --color_19: 28,50,127;
+    --color_20: 0,0,0; /* Placeholder, not defined in summary */
+    --color_21: 181,18,18;
+    --color_22: 181,18,18;
+    --color_23: 181,18,18;
+    --color_24: 181,18,18;
+    --color_25: 181,18,18;
+    --color_26: 12,129,17;
+    --color_27: 12,129,17;
+    --color_28: 12,129,17;
+    --color_29: 12,129,17;
+    --color_30: 12,129,17;
+    --color_31: 255,233,179;
+    --color_32: 255,222,141;
+    --color_33: 255,221,28;
+    --color_34: 255,221,28;
+    --color_35: 255,221,28;
+    --color_36: 255,255,255;
+    --color_37: 114,114,114;
+    --color_38: 176,176,176;
+    --color_39: 207,207,207;
+    --color_40: 90,89,89;
+    --color_41: 164,230,247;
+    --color_42: 255,221,28;
+    --color_43: 0,0,0; /* Placeholder, not defined in summary */
+    --color_44: 181,18,18;
+    --color_45: 0,125,159; /* Modern Blue derived from this */
+    --color_46: 114,114,114;
+    --color_47: 176,176,176;
+    --color_48: 119,215,239;
+    --color_49: 0,208,232;
+    --color_50: 255,255,255;
+    --color_51: 255,255,255;
+    --color_52: 0,208,232;
+    --color_53: 0,208,232;
+    --color_54: 176,176,176;
+    --color_55: 114,114,114;
+    --color_56: 255,255,255;
+    --color_57: 255,255,255;
+    --color_58: 0,208,232;
+    --color_59: 0,208,232;
+    --color_60: 0,208,232;
+    --color_61: 0,208,232;
+    --color_62: 255,255,255;
+    --color_63: 255,255,255;
+    --color_64: 207,207,207;
+    --color_65: 90,89,89;
+
+    /* Original Font Variables (Retained for reference, will be overridden by modern fonts) */
+    --font_0: 'arial black', arial-w01-black, sans-serif;
+    --font_1: arial, 'ｍｓ ｐゴシック','ms pgothic','돋움',dotum,helvetica,sans-serif;
+    --font_2: arial, 'ｍｓ ｐゴシック','ms pgothic','돋움',dotum,helvetica,sans-serif; /* bold */
+    --font_3: arial, 'ｍｓ ｐゴシック','ms pgothic','돋움',dotum,helvetica,sans-serif;
+    --font_4: 'arial black', arial-w01-black, sans-serif;
+    --font_5: arial, 'ｍｓ ｐゴシック','ms pgothic','돋움',dotum,helvetica,sans-serif; /* bold */
+    --font_6: arial, 'ｍｓ ｐゴシック','ms pgothic','돋움',dotum,helvetica,sans-serif;
+    --font_7: arial, 'ｍｓ ｐゴシック','ms pgothic','돋움',dotum,helvetica,sans-serif;
+    --font_8: arial, 'ｍｓ ｐゴシック','ms pgothic','돋움',dotum,helvetica,sans-serif;
+    --font_9: arial, 'ｍｓ ｐゴシック','ms pgothic','돋움',dotum,helvetica,sans-serif;
+    --font_10: arial, 'ｍｓ ｐゴシック','ms pgothic','돋움',dotum,helvetica,sans-serif;
+
+    /* Modern Color Palette (Derived from original and modern aesthetic) */
+    --primary-color: #007bff; /* A clean blue, similar to color_45, adjusted for modern feel */
+    --secondary-color: #6c757d; /* A neutral grey */
+    --accent-color: #28a745; /* A success green */
+    --background-light: #f8f9fa; /* Light grey background */
+    --background-dark: #343a40; /* Dark grey for footer/dark sections */
+    --text-dark: #212529; /* Primary dark text */
+    --text-light: #fefefe; /* Primary light text */
+    --border-color: #dee2e6; /* Light grey border */
+
+    /* Modern Typography */
+    --font-heading: 'Montserrat', system-ui, sans-serif;
+    --font-body: 'Open Sans', system-ui, sans-serif;
+    --font-code: 'Roboto Mono', monospace;
+
+    /* Font Sizes (Responsive with clamp) */
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem; /* H4 */
+    --text-3xl: 1.875rem; /* H3 */
+    --text-4xl: 2.25rem; /* H2 */
+    --text-5xl: 3rem; /* H1 */
+    --text-6xl: 3.75rem;
+
+    /* Spacing Scale (rem units for consistency) */
+    --spacing-xs: 0.25rem; /* 4px */
+    --spacing-sm: 0.5rem; /* 8px */
+    --spacing-md: 1rem; /* 16px */
+    --spacing-lg: 1.5rem; /* 24px */
+    --spacing-xl: 2rem; /* 32px */
+    --spacing-2xl: 3rem; /* 48px */
+    --spacing-3xl: 4rem; /* 64px */
+    --spacing-4xl: 5rem; /* 80px */
+    --spacing-5xl: 6rem; /* 96px */
+
+    /* Border Radius */
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 0.75rem;
+
+    /* Box Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+
+    /* Transitions */
+    --transition-speed: 0.3s;
+    --transition-ease: ease-in-out;
+
+    /* Layout */
+    --max-width-content: 1200px;
+    --header-height: 80px;
+
+    /* Accessibility */
+    --focus-ring-color: var(--primary-color);
+}
+
+/* Universal box-sizing for consistency */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Modern CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Base Styles */
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    margin-top: var(--header-height); /* Account for sticky header */
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) var(--transition-ease);
+}
+
+a:hover {
+    color: darken(var(--primary-color), 10%); /* Pseudo-function, replace in real CSS */
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below images */
+    object-fit: cover;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-dark);
+}
+
+h1 {
+    font-size: clamp(var(--text-4xl), 5vw, var(--text-5xl));
+    margin-bottom: var(--spacing-lg);
+}
+
+h2 {
+    font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
+    margin-bottom: var(--spacing-lg);
+}
+
+h3 {
+    font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl));
+    margin-bottom: var(--spacing-md);
+}
+
+h4 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--spacing-md);
+}
+
+h5 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+h6 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+/* Utility Classes */
+.container {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-primary { color: var(--primary-color); }
+.text-secondary { color: var(--secondary-color); }
+.text-accent { color: var(--accent-color); }
+.text-light { color: var(--text-light); }
+.text-dark { color: var(--text-dark); }
+
+.bg-primary { background-color: var(--primary-color); }
+.bg-secondary { background-color: var(--secondary-color); }
+.bg-accent { background-color: var(--accent-color); }
+.bg-light { background-color: var(--background-light); }
+.bg-dark { background-color: var(--background-dark); }
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: var(--text-lg);
+    cursor: pointer;
+    border: none;
+    transition: all var(--transition-speed) var(--transition-ease);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background-color: hsl(215, 80%, 38%); /* Darker shade of primary */
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+.btn-secondary:hover {
+    background-color: hsl(210, 9%, 28%); /* Darker shade of secondary */
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    box-shadow: none;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
+}
+
+/* Sections */
+.section {
+    padding: var(--spacing-4xl) 0;
+}
+
+.section-dark {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+}
+
+.section-light {
+    background-color: var(--background-light);
+    color: var(--text-dark);
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-dark);
+}
+
+.form-input, .form-textarea {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--text-dark);
+    background-color: var(--text-light);
+    transition: all var(--transition-speed) var(--transition-ease);
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.25);
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Accessibility - Focus states */
+*:focus-visible {
+    outline: 2px solid var(--focus-ring-color);
+    outline-offset: 3px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    h1 {
+        font-size: var(--text-4xl);
+    }
+
+    h2 {
+        font-size: var(--text-3xl);
+    }
+
+    h3 {
+        font-size: var(--text-2xl);
+    }
+
+    .section {
+        padding: var(--spacing-3xl) 0;
+    }
+}
+
+/* Header & Footer (placeholder for global styles, detailed in their own files) */
+header {
+    background-color: var(--background-light);
+    box-shadow: var(--shadow-sm);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+    padding: 0 var(--spacing-lg);
+}
+
+header .logo {
+    height: calc(var(--header-height) - var(--spacing-md));
+}
+
+header .logo img {
+    height: 100%;
+    width: auto;
+}
+
+header nav ul {
+    display: flex;
+    gap: var(--spacing-xl);
+}
+
+header nav ul li a {
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: var(--text-lg);
+    padding: var(--spacing-sm) 0;
+    position: relative;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed) var(--transition-ease);
+}
+
+header nav ul li a:hover::after,
+header nav ul li a.active::after {
+    width: 100%;
+}
+
+.mobile-menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    font-size: var(--text-3xl);
+    cursor: pointer;
+    color: var(--text-dark);
+    padding: var(--spacing-sm);
+}
+
+footer {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    padding: var(--spacing-3xl) 0;
+    text-align: center;
+}
+
+footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+footer .social-links a {
+    color: var(--text-light);
+    font-size: var(--text-2xl);
+    transition: color var(--transition-speed) var(--transition-ease), transform var(--transition-speed) var(--transition-ease);
+}
+
+footer .social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    header {
+        justify-content: space-between;
+        padding: 0 var(--spacing-md);
+    }
+
+    header nav {
+        display: none; /* Hide nav by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background-color: var(--background-light);
+        box-shadow: var(--shadow-md);
+        padding: var(--spacing-md) 0;
+    }
+
+    header nav.active {
+        display: flex;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    header nav ul li a {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+}

@@ -192,9 +192,6 @@ def main():
 
     # create agentic website coder
 
-    # create directory containing final info
-    os.makedirs("final_product", exist_ok=True)
-
     # list available functions for the model to use
     agent3_available_functions = types.Tool(
         function_declarations=[
@@ -207,7 +204,7 @@ def main():
 
     # create system prompt
     AGENT_3_SYSTEM_PROMPT = (
-        f"You are a website developer who is in charge of redesigning a website with the following suggestiongs/requirements/issues that need fixing."
+        f"You are a website developer agent who is in charge of redesigning a website with the following suggestiongs/requirements/issues that need fixing."
         f"You will not be given the original code, but rather a summary of flaws and important information that the website needs to have."
         f"Write code in HTML, CSS, and JS. Code the website with this style: {style}"
         f"Feel free to make as many files as you need."
@@ -221,8 +218,12 @@ def main():
         f"You will ABSOLUTELY NEED to use these functions if you are to satisfy the objective."
         f"Your first step should definitely be creating files for various pages/scripts/styles."
         f"EXTREMELY IMPORTANT NOTE: TO AVOID OVERWRITING AN EXISTING FILE WITH BLANK TEXT IF NO CHANGES ARE NEEDED, SET content='nothing to add' WORD FOR WORD!"
-        f"Do NOT create another final_product directory, it already exists."
         f"Make sure that you write code for ALL webpages in the site, not just one."
+        f"YOU MUST UPDATE THE CODE AFTER GETTING FEEDBACK FROM THE EVAL MODEL! (hint: use the write_file tool)"
+        f"Add tons of responsive animations and overall make it look as good as possible."
+        f"Make sure that the homepage is properly styled, as well as all of the other pages."
+        f"Do your best, this must be absolutely perfect."
+        f"THE MAIN FOCUS IS STYLING, IT MUST LOOK PROFESSIONAL, DO NOT WORRY ABOUT FILE SIZE OF CSS FILES."
     )
 
     # create config

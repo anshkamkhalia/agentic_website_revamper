@@ -3,7 +3,7 @@ from google.genai import types
 
 def create_file(working_directory:str, filepath: str, content: str=""):
     # gets absolute paths
-    abs_path = os.path.abspath(os.path.join(working_directory, filepath))
+    abs_path = os.path.abspath(os.path.join(working_directory, filepath)) if not filepath.startswith(working_directory) else filepath
 
     # checks if file is actually inside the workingt directory
     if not abs_path.startswith(os.path.abspath(working_directory)):
