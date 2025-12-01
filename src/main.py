@@ -4,6 +4,7 @@ from google.genai import types
 from google import genai
 from dotenv import load_dotenv
 import time
+import shutil
 
 # import tools
 from functions.web_scraper import scrape_website
@@ -224,6 +225,8 @@ def main():
         f"Make sure that the homepage is properly styled, as well as all of the other pages."
         f"Do your best, this must be absolutely perfect."
         f"THE MAIN FOCUS IS STYLING, IT MUST LOOK PROFESSIONAL, DO NOT WORRY ABOUT FILE SIZE OF CSS FILES."
+        f"If you make any images, add the respective image data (binary) into the file."
+        f"Keep it low resolution as well as grayscale. "
     )
 
     # create config
@@ -326,6 +329,16 @@ def main():
 
         print(f"iteration {iteration}")
         time.sleep(120) # reset API limits
+
+        # copy directory
+        snapshot_dir = f"iterations/iteration_{iteration}"
+        os.makedirs("iterations", exist_ok=True)
+        
+        if os.path.exists(snapshot_dir):
+            shutil.rmtree(snapshot_dir)
+
+        shutil.copytree("final_product", snapshot_dir)
+        print(f"Saved snapshot: {snapshot_dir}")
 
 
 if __name__ == "__main__":
