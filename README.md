@@ -28,5 +28,29 @@ This project simulates a team of individuals analyzing, reviewingm, and improvin
     - Strictly provided tools to view files, not editing.
     - Uses **Gemini 2.0 Flash-Lite** to balance TPM, RPM, and RPD (has lenient rates)
 
-After the first and second agents have compiled their summaries, Agent 3 will make a website, and Agent 4 will evaluate it, provided feedback. Agent 3 will then use this feedback to improve its next iteration. This will repeat a maximum of 5 times, with the coding agent running 4 times at max, and the evaluator running only once.
+After the first and second agents have compiled their summaries, Agent 3 will make a website, and Agent 4 will evaluate it, provided feedback. Agent 3 will then use this feedback to improve its next iteration. This will repeat a maximum of 5 times, with the coding agent running 4 times at max, and the evaluator running only once.'
 
+## How to use
+
+Python version - 3.11
+
+Run this command to install dependencies:
+
+```zsh
+pip install -r reqiurements.txt
+```
+
+Run this command to execute the program:
+
+```zsh
+python src/main.py "https://website.com" "preferred style"
+```
+
+> Note: you will need to provide your own API keys and store them inside a .env file in the src directory
+
+## Final:
+
+The code will most likely be located in the final_product directory, and the main page will almost always be `index.html`.
+To easily view the finished website, download the Live Server extension (if on VS Code), or some similar preview.
+
+> WARNING: THIS PROJECT IS STILL UNDER DEVELOPMENT, WITH MANY ISSUES TO WORK OUT (API limits, images extracting, speed, etc)
